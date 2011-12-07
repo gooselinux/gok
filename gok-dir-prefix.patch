@@ -1,0 +1,27 @@
+diff -up gok-2.28.1/gok/main.c.dir-prefix gok-2.28.1/gok/main.c
+--- gok-2.28.1/gok/main.c.dir-prefix	2010-03-22 09:48:59.007689373 -0400
++++ gok-2.28.1/gok/main.c	2010-03-22 09:50:36.625433959 -0400
+@@ -2290,15 +2290,15 @@ gok_main_initialize_wordcomplete ()
+     gchar *directory_name = NULL;
+     gboolean user_copy = FALSE;
+     gchar *user_directory_name = NULL;
+-    const gchar *homedir = g_get_home_dir ();
++    const gchar *override;
+ 
+-    if (homedir) {
+-	    user_directory_name = g_build_path (G_DIR_SEPARATOR_S, homedir, ".gnome2", "gok", NULL);
+-    }
+-    else 
+-    {
+-	    gok_log_x ("gok_main_initialize_wordcomplete: no home directory!");
+-    }
++    override = g_getenv ("GNOME22_USER_DIR");
++
++    if (override)
++            user_directory_name = g_build_filename (override, "gok", NULL);
++    else
++            user_directory_name = g_build_filename (g_get_home_dir (),
++                                                    ".gnome2", "gok", NULL);
+ 
+     gconf_client = gconf_client_get_default ();
+     

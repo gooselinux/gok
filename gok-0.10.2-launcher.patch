@@ -1,0 +1,11 @@
+--- gok-0.10.2/launcher.kbd.in.~1.1.~	2003-11-10 16:17:54.000000000 -0500
++++ gok-0.10.2/launcher.kbd.in	2004-05-14 14:42:17.307539880 -0400
+@@ -11,7 +11,7 @@
+ 	</GOK:key> 
+ 	<GOK:key left="3" right="6" top="0" bottom="1" type="normal"> 
+ 		<_GOK:label>Web Browser</_GOK:label> 
+-		<GOK:output type="exec">mozilla</GOK:output>
++		<GOK:output type="exec">htmlview</GOK:output>
+ 	</GOK:key> 
+ 	<GOK:key left="0" right="3" top="1" bottom="2" type="normal"> 
+ 		<_GOK:label>Text Editor</_GOK:label> 
